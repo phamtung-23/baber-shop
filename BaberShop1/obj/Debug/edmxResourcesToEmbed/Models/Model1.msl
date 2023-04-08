@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BARBERSHOPModelStoreContainer" CdmEntityContainer="BARBERSHOPEntities">
+    <EntitySetMapping Name="ACCOUNT_USER">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.ACCOUNT_USER">
+        <MappingFragment StoreEntitySet="ACCOUNT_USER">
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD_USER" ColumnName="PASSWORD_USER" />
+          <ScalarProperty Name="STATUS_ACCOUNT" ColumnName="STATUS_ACCOUNT" />
+          <ScalarProperty Name="CHECK_EMPLOYEE" ColumnName="CHECK_EMPLOYEE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BOOKINGs">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.BOOKING">
+        <MappingFragment StoreEntitySet="BOOKING">
+          <ScalarProperty Name="ID_BOOKING" ColumnName="ID_BOOKING" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="NAME_BOOK" ColumnName="NAME_BOOK" />
+          <ScalarProperty Name="PHONE_BOOK" ColumnName="PHONE_BOOK" />
+          <ScalarProperty Name="DATE_BOOKING" ColumnName="DATE_BOOKING" />
+          <ScalarProperty Name="TIME_BOOKING" ColumnName="TIME_BOOKING" />
+          <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFOR_SHOP">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.INFOR_SHOP">
+        <MappingFragment StoreEntitySet="INFOR_SHOP">
+          <ScalarProperty Name="ID_SHOP" ColumnName="ID_SHOP" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FACEBOOK" ColumnName="FACEBOOK" />
+          <ScalarProperty Name="ZALO" ColumnName="ZALO" />
+          <ScalarProperty Name="INSTAGRAM" ColumnName="INSTAGRAM" />
+          <ScalarProperty Name="TIMEOPEN_DAILY" ColumnName="TIMEOPEN_DAILY" />
+          <ScalarProperty Name="ADDRESS_SHOP" ColumnName="ADDRESS_SHOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFOUSERs">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.INFOUSER">
+        <MappingFragment StoreEntitySet="INFOUSER">
+          <ScalarProperty Name="ID_INFO_USER" ColumnName="ID_INFO_USER" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="AVT_USER" ColumnName="AVT_USER" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADDRESS_USER" ColumnName="ADDRESS_USER" />
+          <ScalarProperty Name="LINK_FB_USER" ColumnName="LINK_FB_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUs">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+          <ScalarProperty Name="NAME_MENU" ColumnName="NAME_MENU" />
+          <ScalarProperty Name="DATETIME_MENU" ColumnName="DATETIME_MENU" />
+          <ScalarProperty Name="LINK" ColumnName="LINK" />
+          <ScalarProperty Name="STATUS_MENU" ColumnName="STATUS_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="ID_NHANVIEN" ColumnName="ID_NHANVIEN" />
+          <ScalarProperty Name="NAME_NHANVIEN" ColumnName="NAME_NHANVIEN" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="SKILL" ColumnName="SKILL" />
+          <ScalarProperty Name="AVT" ColumnName="AVT" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="LINK_FB" ColumnName="LINK_FB" />
+          <ScalarProperty Name="LINK_INSTAGRAM" ColumnName="LINK_INSTAGRAM" />
+          <ScalarProperty Name="DESCRIPSTION_NV" ColumnName="DESCRIPSTION_NV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICE_SHOP">
+      <EntityTypeMapping TypeName="BARBERSHOPModel.SERVICE_SHOP">
+        <MappingFragment StoreEntitySet="SERVICE_SHOP">
+          <ScalarProperty Name="ID_SERVICE" ColumnName="ID_SERVICE" />
+          <ScalarProperty Name="NAME_SERVICE" ColumnName="NAME_SERVICE" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="DESCRIPSTION" ColumnName="DESCRIPSTION" />
+          <ScalarProperty Name="STATUS_SERVICE" ColumnName="STATUS_SERVICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BARBERSHOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCOUNT_USER">
+    <Key>
+      <PropertyRef Name="ID_USER" />
+    </Key>
+    <Property Name="ID_USER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_ACCOUNT" Type="Boolean" />
+    <Property Name="CHECK_EMPLOYEE" Type="Boolean" />
+    <NavigationProperty Name="BOOKINGs" Relationship="Self.FK_BOOKING_USER" FromRole="ACCOUNT_USER" ToRole="BOOKING" />
+    <NavigationProperty Name="INFOUSERs" Relationship="Self.FK_INFOUSER_ID_USER" FromRole="ACCOUNT_USER" ToRole="INFOUSER" />
+  </EntityType>
+  <EntityType Name="BOOKING">
+    <Key>
+      <PropertyRef Name="ID_BOOKING" />
+    </Key>
+    <Property Name="ID_BOOKING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="NAME_BOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_BOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_BOOKING" Type="DateTime" Precision="0" />
+    <Property Name="TIME_BOOKING" Type="Time" Precision="7" />
+    <Property Name="COMMENT" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Int32" />
+    <NavigationProperty Name="ACCOUNT_USER" Relationship="Self.FK_BOOKING_USER" FromRole="BOOKING" ToRole="ACCOUNT_USER" />
+  </EntityType>
+  <EntityType Name="INFOR_SHOP">
+    <Key>
+      <PropertyRef Name="ID_SHOP" />
+    </Key>
+    <Property Name="ID_SHOP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PHONE" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FACEBOOK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZALO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="INSTAGRAM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TIMEOPEN_DAILY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_SHOP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="INFOUSER">
+    <Key>
+      <PropertyRef Name="ID_INFO_USER" />
+    </Key>
+    <Property Name="ID_INFO_USER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USER" Type="Int32" />
+    <Property Name="AVT_USER" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_USER" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LINK_FB_USER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ACCOUNT_USER" Relationship="Self.FK_INFOUSER_ID_USER" FromRole="INFOUSER" ToRole="ACCOUNT_USER" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_MENU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME_MENU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DATETIME_MENU" Type="DateTime" Precision="3" />
+    <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_MENU" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="ID_NHANVIEN" />
+    </Key>
+    <Property Name="ID_NHANVIEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME_NHANVIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SEX" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SKILL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AVT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LINK_FB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LINK_INSTAGRAM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPSTION_NV" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SERVICE_SHOP">
+    <Key>
+      <PropertyRef Name="ID_SERVICE" />
+    </Key>
+    <Property Name="ID_SERVICE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME_SERVICE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRICE" Type="Int32" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPSTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_SERVICE" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_BOOKING_USER">
+    <End Role="ACCOUNT_USER" Type="Self.ACCOUNT_USER" Multiplicity="0..1" />
+    <End Role="BOOKING" Type="Self.BOOKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT_USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="BOOKING">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INFOUSER_ID_USER">
+    <End Role="ACCOUNT_USER" Type="Self.ACCOUNT_USER" Multiplicity="0..1" />
+    <End Role="INFOUSER" Type="Self.INFOUSER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACCOUNT_USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="INFOUSER">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BARBERSHOPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNT_USER" EntityType="Self.ACCOUNT_USER" />
+    <EntitySet Name="BOOKINGs" EntityType="Self.BOOKING" />
+    <EntitySet Name="INFOR_SHOP" EntityType="Self.INFOR_SHOP" />
+    <EntitySet Name="INFOUSERs" EntityType="Self.INFOUSER" />
+    <EntitySet Name="MENUs" EntityType="Self.MENU" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="SERVICE_SHOP" EntityType="Self.SERVICE_SHOP" />
+    <AssociationSet Name="FK_BOOKING_USER" Association="Self.FK_BOOKING_USER">
+      <End Role="ACCOUNT_USER" EntitySet="ACCOUNT_USER" />
+      <End Role="BOOKING" EntitySet="BOOKINGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INFOUSER_ID_USER" Association="Self.FK_INFOUSER_ID_USER">
+      <End Role="ACCOUNT_USER" EntitySet="ACCOUNT_USER" />
+      <End Role="INFOUSER" EntitySet="INFOUSERs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
